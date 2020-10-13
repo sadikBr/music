@@ -1,14 +1,17 @@
 <template>
   <div class="home">
-    <h1>hello</h1>
+    <ContentGroup />
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
+import ContentGroup from '../components/ContentGroup';
 
 export default {
   name: 'Home',
+  components: {
+    ContentGroup,
+  },
 };
 </script>
 

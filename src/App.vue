@@ -133,7 +133,8 @@ export default {
 }
 
 body {
-  overflow: hidden;
+  overflow: auto;
+  height: 100vh;
 }
 
 .position {

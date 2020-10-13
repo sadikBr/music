@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    This is the home page
+    <h1>hello</h1>
   </div>
 </template>
 
@@ -11,3 +11,10 @@ export default {
   name: 'Home',
 };
 </script>
+
+<style lang="scss">
+.home {
+  width: 100%;
+  height: 100%;
+}
+</style>

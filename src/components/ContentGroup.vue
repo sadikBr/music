@@ -43,7 +43,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style scoped lang="scss">
 .group-title {
   font-size: 1.5rem;
   font-weight: normal;

@@ -46,7 +46,16 @@
 export default {};
 </script>
 
-<style>
+<style scoped>
+.group-title {
+  font-size: 1.5rem;
+  font-weight: normal;
+}
+.cards-container {
+  display: block !important;
+  white-space: nowrap !important;
+  overflow: auto hidden !important;
+}
 div.v-card__title {
   display: block;
   text-align: center !important;

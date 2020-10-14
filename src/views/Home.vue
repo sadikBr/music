@@ -17,11 +17,10 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style scoped lang="scss">
 .home {
   width: 100%;
   height: 100%;
   padding: 12px;
-  overflow: auto;
 }
 </style>

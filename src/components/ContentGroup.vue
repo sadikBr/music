@@ -1,6 +1,6 @@
 <template>
   <v-item-group multiple>
-    <h1>{{ title }}</h1>
+    <h1 class="group-title">{{ title }}</h1>
     <v-row class="cards-container">
       <v-col
         class="d-inline-block dimensions"
@@ -44,6 +44,10 @@ export default {
 </script>
 
 <style lang="scss">
+.group-title {
+  font-size: 1.5rem;
+  font-weight: normal;
+}
 .cards-container {
   display: block !important;
   white-space: nowrap !important;

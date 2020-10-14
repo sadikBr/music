@@ -1,41 +1,66 @@
 <template>
   <v-app id="inspire">
     <v-navigation-drawer class="d-none d-sm-flex" v-model="drawer" app clipped>
-      <h1>hello</h1>
-      <h1>hello</h1>
-      <h1>hello</h1>
-      <h1>hello</h1>
-      <h1>hello</h1>
-      <h1>hello</h1>
-      <h1>hello</h1>
-      <h1>hello</h1>
-      <h1>hello</h1>
-      <h1>hello</h1>
-      <h1>hello</h1>
-      <h1>hello</h1>
-      <h1>hello</h1>
-      <h1>hello</h1>
-      <h1>hello</h1>
-      <h1>hello</h1>
-      <h1>hello</h1>
-      <h1>hello</h1>
-      <h1>hello</h1>
-      <h1>hello</h1>
-      <h1>hello</h1>
-      <h1>hello</h1>
-      <h1>hello</h1>
-      <h1>hello</h1>
-      <h1>hello</h1>
-      <h1>hello</h1>
-      <h1>hello</h1>
+      <v-list dense>
+        <v-list-item link>
+          <v-list-item-action>
+            <v-icon>mdi-home</v-icon>
+          </v-list-item-action>
+          <v-list-item-content>
+            <v-list-item-title>
+              Home
+            </v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+        <v-list-item link>
+          <v-list-item-action>
+            <v-icon>mdi-music</v-icon>
+          </v-list-item-action>
+          <v-list-item-content>
+            <v-list-item-title>
+              My Music
+            </v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+        <v-list-item link>
+          <v-list-item-action>
+            <v-icon>mdi-heart</v-icon>
+          </v-list-item-action>
+          <v-list-item-content>
+            <v-list-item-title>
+              Favorites
+            </v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+        <v-list-item link>
+          <v-list-item-action>
+            <v-icon>mdi-history</v-icon>
+          </v-list-item-action>
+          <v-list-item-content>
+            <v-list-item-title>
+              History
+            </v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+        <v-list-item link>
+          <v-list-item-action>
+            <v-icon>mdi-download</v-icon>
+          </v-list-item-action>
+          <v-list-item-content>
+            <v-list-item-title>
+              Downloads
+            </v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+      </v-list>
     </v-navigation-drawer>
 
-    <v-app-bar app clipped-left color="red" dense>
+    <v-app-bar app clipped-left :color="color">
       <v-app-bar-nav-icon
         class="d-none d-sm-flex"
         @click.stop="drawer = !drawer"
       ></v-app-bar-nav-icon>
-      <v-icon class="mx-4 ml-0" large>
+      <v-icon class="d-flex d-sm-none mx-4 ml-0" large>
         mdi-music
       </v-icon>
       <v-toolbar-title class="mr-12 align-center">
@@ -64,23 +89,28 @@
         shift
       >
         <v-btn>
-          <span>Video</span>
-          <v-icon>mdi-television-play</v-icon>
+          <span>Home</span>
+          <v-icon>mdi-home</v-icon>
         </v-btn>
 
         <v-btn>
-          <span>Music</span>
-          <v-icon>mdi-music-note</v-icon>
+          <span>My Music</span>
+          <v-icon>mdi-music</v-icon>
         </v-btn>
 
         <v-btn>
-          <span>Book</span>
-          <v-icon>mdi-book</v-icon>
+          <span>Favorites</span>
+          <v-icon>mdi-heart</v-icon>
         </v-btn>
 
         <v-btn>
-          <span>Image</span>
-          <v-icon>mdi-image</v-icon>
+          <span>Downloads</span>
+          <v-icon>mdi-download</v-icon>
+        </v-btn>
+
+        <v-btn>
+          <span>History</span>
+          <v-icon>mdi-history</v-icon>
         </v-btn>
       </v-bottom-navigation>
     </v-main>

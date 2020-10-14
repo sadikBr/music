@@ -2,7 +2,7 @@
   <v-app id="inspire">
     <v-navigation-drawer class="d-none d-sm-flex" v-model="drawer" app clipped>
       <v-list dense>
-        <v-list-item link>
+        <v-list-item link to="/">
           <v-list-item-action>
             <v-icon>mdi-home</v-icon>
           </v-list-item-action>
@@ -12,7 +12,7 @@
             </v-list-item-title>
           </v-list-item-content>
         </v-list-item>
-        <v-list-item link>
+        <v-list-item link to="/mymusic">
           <v-list-item-action>
             <v-icon>mdi-music</v-icon>
           </v-list-item-action>
@@ -22,7 +22,7 @@
             </v-list-item-title>
           </v-list-item-content>
         </v-list-item>
-        <v-list-item link>
+        <v-list-item link to="/favorites">
           <v-list-item-action>
             <v-icon>mdi-heart</v-icon>
           </v-list-item-action>
@@ -32,7 +32,7 @@
             </v-list-item-title>
           </v-list-item-content>
         </v-list-item>
-        <v-list-item link>
+        <v-list-item link to="/history">
           <v-list-item-action>
             <v-icon>mdi-history</v-icon>
           </v-list-item-action>
@@ -42,7 +42,7 @@
             </v-list-item-title>
           </v-list-item-content>
         </v-list-item>
-        <v-list-item link>
+        <v-list-item link to="/downloads">
           <v-list-item-action>
             <v-icon>mdi-download</v-icon>
           </v-list-item-action>
@@ -57,7 +57,7 @@
 
     <v-app-bar app clipped-left :color="color">
       <v-app-bar-nav-icon
-        class="d-none d-sm-flex"
+        class="d-none d-sm-flex mr-3"
         @click.stop="drawer = !drawer"
       ></v-app-bar-nav-icon>
       <v-icon class="d-flex d-sm-none mx-4 ml-0" large>
@@ -88,27 +88,27 @@
         dark
         shift
       >
-        <v-btn>
+        <v-btn to="/">
           <span>Home</span>
           <v-icon>mdi-home</v-icon>
         </v-btn>
 
-        <v-btn>
+        <v-btn to="/mymusic">
           <span>My Music</span>
           <v-icon>mdi-music</v-icon>
         </v-btn>
 
-        <v-btn>
+        <v-btn to="/favorites">
           <span>Favorites</span>
           <v-icon>mdi-heart</v-icon>
         </v-btn>
 
-        <v-btn>
+        <v-btn to="/downloads">
           <span>Downloads</span>
           <v-icon>mdi-download</v-icon>
         </v-btn>
 
-        <v-btn>
+        <v-btn to="/history">
           <span>History</span>
           <v-icon>mdi-history</v-icon>
         </v-btn>

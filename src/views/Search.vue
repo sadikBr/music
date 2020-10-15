@@ -1,7 +1,6 @@
 <template>
   <div class="search">
     The Search Page
-    
   </div>
 </template>
 

@@ -62,12 +62,14 @@
         cols="12"
         mb="1"
       >
-        <v-img
-          class="round-images"
-          src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg"
-          height="150px"
-          width="150px"
-        ></v-img>
+        <v-btn height="150px" width="150px" fab to="/playlist">
+          <v-img
+            class="round-images"
+            src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg"
+            height="150px"
+            width="150px"
+          ></v-img>
+        </v-btn>
 
         <v-card-title>
           Playlist Name
@@ -87,7 +89,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .group-title {
   font-size: 1.5rem;
   font-weight: normal;
@@ -104,10 +106,6 @@ div.v-card__title {
   font-weight: normal;
   line-height: 1rem;
 }
-div.v-image {
-  display: block;
-  margin: auto;
-}
 .create-btn {
   display: block;
   margin: auto;
@@ -118,6 +116,11 @@ div.v-image {
 .dimension {
   width: 200px !important;
   text-align: center center;
+
+  .v-btn {
+    display: block;
+    margin: auto;
+  }
 }
 .round-images {
   border-radius: 50%;

@@ -2,7 +2,7 @@
   <v-list class="ma-auto" max-width="950px" subheader>
     <v-subheader>{{ groupName }}</v-subheader>
 
-    <v-list-item v-for="n in 10" :key="n" link to="/play">
+    <v-list-item v-for="n in 10" :key="n" link>
       <v-list-item-avatar>
         <v-img
           src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg"

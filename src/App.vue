@@ -167,7 +167,7 @@ export default {
 }
 
 body {
-  overflow: auto;
+  overflow: hidden auto;
   height: 100vh;
 }
 

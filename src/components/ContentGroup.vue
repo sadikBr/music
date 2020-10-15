@@ -17,7 +17,7 @@
             ></v-img>
 
             <v-row align="center">
-              <v-col class="padding" cols="9">
+              <v-col class="padding" cols="10">
                 <v-card-title>
                   Top western road trips
                 </v-card-title>
@@ -26,9 +26,9 @@
                   1,000 miles of wonder
                 </v-card-subtitle>
               </v-col>
-              <v-col class="padding" cols="3">
-                <v-icon class="pointer">mdi-play</v-icon>
-              </v-col>
+              <v-btn dark fab x-small flat to="/play">
+                <v-icon>mdi-play</v-icon>
+              </v-btn>
             </v-row>
           </v-card>
         </v-item>
@@ -66,8 +66,5 @@ export default {
       font-size: 0.8em !important;
     }
   }
-}
-.pointer {
-  cursor: pointer;
 }
 </style>

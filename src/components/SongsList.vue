@@ -2,7 +2,7 @@
   <v-list class="ma-auto" max-width="950px" subheader>
     <v-subheader>{{ groupName }}</v-subheader>
 
-    <v-list-item v-for="n in 10" :key="n" link to="/">
+    <v-list-item v-for="n in 10" :key="n" link to="/play">
       <v-list-item-avatar>
         <v-img
           src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg"
@@ -15,9 +15,15 @@
         </v-list-item-content>
       </v-list-item-content>
       <v-list-item-icon>
-        <v-icon class="ml-2">mdi-dots-vertical</v-icon>
-        <v-icon class="ml-2">mdi-heart</v-icon>
-        <v-icon class="ml-2">mdi-play</v-icon>
+        <v-btn class="btn-edit" x-small fab>
+          <v-icon>mdi-dots-vertical</v-icon>
+        </v-btn>
+        <v-btn class="btn-edit" x-small fab>
+          <v-icon>mdi-heart</v-icon>
+        </v-btn>
+        <v-btn class="btn-edit" fab x-small to="/play">
+          <v-icon>mdi-play</v-icon>
+        </v-btn>
       </v-list-item-icon>
     </v-list-item>
   </v-list>
@@ -30,6 +36,12 @@ export default {
 </script>
 
 <style scoped>
+.btn-edit {
+  margin: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .v-list-item__icon {
   align-self: center !important;
 }

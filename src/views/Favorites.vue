@@ -1,9 +1,27 @@
 <template>
-  <div class="favorites">Favorites Page</div>
+  <div class="favorites">
+    <SongsList
+      groupName="My Favorite Songs"
+      :songName="songName"
+      :artistName="artistName"
+    />
+  </div>
 </template>
 
 <script>
-export default {};
+import SongsList from '../components/SongsList';
+
+export default {
+  components: {
+    SongsList,
+  },
+  data() {
+    return {
+      songName: 'Song Name Comming From Youtube',
+      artistName: 'Artist Name',
+    };
+  },
+};
 </script>
 
 <style scoped>

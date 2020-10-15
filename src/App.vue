@@ -130,16 +130,19 @@ export default {
       let col;
       switch (this.bottomNav) {
         case 0:
-          col = '#960018';
+          col = '#ad1d45';
           break;
         case 1:
-          col = '#B22222';
+          col = '#83142c';
           break;
         case 2:
-          col = '#7E191B';
+          col = '#801336';
           break;
         case 3:
-          col = '#5E1914';
+          col = '#84142d';
+          break;
+        case 4:
+          col = '#d7385e';
           break;
       }
       return col;

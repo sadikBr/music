@@ -1,9 +1,27 @@
 <template>
-  <div class="history">History Page</div>
+  <div class="history">
+    <SongsList
+      groupName="Songs History"
+      :songName="songName"
+      :artistName="artistName"
+    />
+  </div>
 </template>
 
 <script>
-export default {};
+import SongsList from '../components/SongsList';
+
+export default {
+  components: {
+    SongsList,
+  },
+  data() {
+    return {
+      songName: 'Song Name Comming From Youtube',
+      artistName: 'Artist Name',
+    };
+  },
+};
 </script>
 
 <style scoped>

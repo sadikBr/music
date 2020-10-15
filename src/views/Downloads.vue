@@ -1,9 +1,27 @@
 <template>
-  <div class="downloads">Downloads Page</div>
+  <div class="downloads">
+    <SongsList
+      groupName="My Downloaded Songs"
+      :songName="songName"
+      :artistName="artistName"
+    />
+  </div>
 </template>
 
 <script>
-export default {};
+import SongsList from '../components/SongsList';
+
+export default {
+  components: {
+    SongsList,
+  },
+  data() {
+    return {
+      songName: 'Song Name Comming From Youtube',
+      artistName: 'Artist Name',
+    };
+  },
+};
 </script>
 
 <style scoped>

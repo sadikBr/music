@@ -3,17 +3,52 @@
     <h1 class="group-title">My Playlists</h1>
     <v-row class="cards-container">
       <v-col class="d-inline-block dimension" cols="12" mb="1">
-        <v-btn
-          class="create-btn"
-          width="150px"
-          height="150px"
-          fab
-          dark
-          link
-          to="/create"
-        >
-          <v-icon dark>mdi-plus</v-icon>
-        </v-btn>
+        <v-row justify="center">
+          <v-dialog v-model="dialog" persistent max-width="600px">
+            <template v-slot:activator="{ on, attrs }">
+              <v-btn
+                class="create-btn"
+                width="150px"
+                height="150px"
+                v-bind="attrs"
+                v-on="on"
+                fab
+                dark
+              >
+                <v-icon dark>mdi-plus</v-icon>
+              </v-btn>
+            </template>
+            <v-card>
+              <v-card-title>
+                <span class="headline">Create New Playlist</span>
+              </v-card-title>
+              <v-card-text>
+                <v-container>
+                  <v-row>
+                    <v-col cols="12">
+                      <v-text-field
+                        label="Playlist Name*"
+                        type="text"
+                        required
+                      ></v-text-field>
+                    </v-col>
+                    <v-col cols="12">
+                      <v-text-field
+                        label="Playlist Background Image"
+                        type="text"
+                      ></v-text-field>
+                    </v-col>
+                  </v-row>
+                </v-container>
+              </v-card-text>
+              <v-card-actions>
+                <v-spacer></v-spacer>
+                <v-btn text @click="dialog = false">Close</v-btn>
+                <v-btn text @click="dialog = false">Save</v-btn>
+              </v-card-actions>
+            </v-card>
+          </v-dialog>
+        </v-row>
 
         <v-card-title>
           Create Playlist
@@ -43,7 +78,13 @@
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      dialog: false,
+    };
+  },
+};
 </script>
 
 <style scoped>
@@ -79,6 +120,6 @@ div.v-image {
   text-align: center center;
 }
 .round-images {
-  border-radius: 1231px;
+  border-radius: 50%;
 }
 </style>

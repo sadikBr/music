@@ -67,16 +67,17 @@
         <span class="title">Music Player</span>
       </v-toolbar-title>
       <v-spacer></v-spacer>
-      <v-row align="center" style="max-width: 650px">
+      <v-form align="center" style="width: 65%; max-width: 650px">
         <v-text-field
           :append-icon-cb="() => {}"
           placeholder="Search..."
+          autocomplete="off"
           single-line
           append-icon="mdi-magnify"
           color="white"
           hide-details
         ></v-text-field>
-      </v-row>
+      </v-form>
     </v-app-bar>
 
     <v-main>

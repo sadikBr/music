@@ -67,7 +67,11 @@
         <span class="title">Music Player</span>
       </v-toolbar-title>
       <v-spacer></v-spacer>
-      <v-form align="center" style="width: 65%; max-width: 650px">
+      <v-form
+        @submit.prevent="submitSearchTerm"
+        align="center"
+        style="width: 65%; max-width: 650px"
+      >
         <v-text-field
           :append-icon-cb="() => {}"
           placeholder="Search..."
@@ -76,6 +80,7 @@
           append-icon="mdi-magnify"
           color="white"
           hide-details
+          v-model="searchTerm"
         ></v-text-field>
       </v-form>
     </v-app-bar>
@@ -125,6 +130,7 @@ export default {
   data: () => ({
     drawer: false,
     bottomNav: 0,
+    searchTerm: '',
   }),
   computed: {
     color() {
@@ -147,6 +153,14 @@ export default {
           break;
       }
       return col;
+    },
+  },
+  methods: {
+    submitSearchTerm() {
+      this.$router.push({
+        name: 'Search',
+        params: { q: this.searchTerm },
+      });
     },
   },
   created() {

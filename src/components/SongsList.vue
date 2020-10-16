@@ -2,16 +2,17 @@
   <v-list class="ma-auto" max-width="950px" subheader>
     <v-subheader>{{ groupName }}</v-subheader>
 
-    <v-list-item v-for="n in 10" :key="n" link>
+    <v-list-item v-for="song in songs" :key="song.id.videoId" link>
       <v-list-item-avatar>
-        <v-img
-          src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg"
-        ></v-img>
+        <v-img :src="song.snippet.thumbnails.medium.url"></v-img>
       </v-list-item-avatar>
       <v-list-item-content>
         <v-list-item-content>
-          <v-list-item-title v-text="songName"></v-list-item-title>
-          <v-list-item-title v-text="artistName"></v-list-item-title>
+          <v-list-item-title v-text="song.snippet.title"></v-list-item-title>
+          <v-list-item-title
+            class="font"
+            v-text="song.snippet.channelTitle"
+          ></v-list-item-title>
         </v-list-item-content>
       </v-list-item-content>
       <v-list-item-icon>
@@ -21,7 +22,12 @@
         <v-btn class="btn-edit" x-small fab>
           <v-icon>mdi-heart</v-icon>
         </v-btn>
-        <v-btn class="btn-edit" fab x-small to="/play">
+        <v-btn
+          class="btn-edit"
+          fab
+          x-small
+          :to="{ name: 'Play', params: { id: song.id.videoId } }"
+        >
           <v-icon>mdi-play</v-icon>
         </v-btn>
       </v-list-item-icon>
@@ -31,7 +37,7 @@
 
 <script>
 export default {
-  props: ['songName', 'artistName', 'groupName'],
+  props: ['songs', 'groupName'],
 };
 </script>
 
@@ -44,5 +50,11 @@ export default {
 }
 .v-list-item__icon {
   align-self: center !important;
+}
+.font {
+  font-size: 0.7em;
+  font-weight: normal;
+  margin-top: 5px;
+  color: rgb(230, 78, 103);
 }
 </style>

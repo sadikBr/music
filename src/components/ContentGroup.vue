@@ -4,29 +4,41 @@
     <v-row class="cards-container">
       <v-col
         class="d-inline-block dimensions"
-        v-for="n in 15"
-        :key="n"
+        v-for="item in data"
+        :key="item.id"
         cols="12"
         mb="2"
       >
         <v-item>
-          <v-card class="mx-auto" light>
+          <v-card class="mx-auto" dark>
             <v-img
-              src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg"
+              :src="item.snippet.thumbnails.medium.url"
               height="150px"
             ></v-img>
 
             <v-row align="center">
               <v-col class="padding" cols="10">
                 <v-card-title>
-                  Top western road trips
+                  {{ item.snippet.title.substr(0, 15) + '...' }}
                 </v-card-title>
 
                 <v-card-subtitle>
-                  1,000 miles of wonder
+                  {{ item.snippet.channelTitle }}
                 </v-card-subtitle>
               </v-col>
-              <v-btn dark fab x-small flat to="/play">
+              <v-btn
+                dark
+                fab
+                x-small
+                :to="{
+                  name: 'Play',
+                  params: {
+                    id: item.kind.includes('playlist')
+                      ? item.snippet.resourceId.videoId
+                      : item.id,
+                  },
+                }"
+              >
                 <v-icon>mdi-play</v-icon>
               </v-btn>
             </v-row>
@@ -39,7 +51,7 @@
 
 <script>
 export default {
-  props: ['title'],
+  props: ['title', 'data'],
 };
 </script>
 

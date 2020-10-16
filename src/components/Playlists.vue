@@ -2,7 +2,7 @@
   <v-item-group multiple>
     <h1 class="group-title">My Playlists</h1>
     <v-row class="cards-container">
-      <v-col class="d-inline-block dimension" cols="12" mb="1">
+      <v-col class="d-inline-block dimension" cols="12">
         <v-row justify="center">
           <v-dialog v-model="dialog" persistent max-width="600px">
             <template v-slot:activator="{ on, attrs }">
@@ -55,13 +55,7 @@
         </v-card-title>
       </v-col>
 
-      <v-col
-        class="d-inline-block dimension"
-        v-for="n in 4"
-        :key="n"
-        cols="12"
-        mb="1"
-      >
+      <v-col class="d-inline-block dimension" v-for="n in 4" :key="n" cols="12">
         <v-btn height="150px" width="150px" fab to="/playlist">
           <v-img
             class="round-images"

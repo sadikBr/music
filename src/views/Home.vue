@@ -48,7 +48,7 @@ export default {
           maxResults: 20,
           regionCode: 'ma',
           videoCategoryId: '10',
-          key: 'AIzaSyB_kAo2_rPkpb90qM4p--nBdenKtG2344Y',
+          key: process.env.VUE_APP_API_KEY,
         },
       });
     },
@@ -60,7 +60,7 @@ export default {
           maxResults: 20,
           regionCode: 'in',
           videoCategoryId: '10',
-          key: 'AIzaSyB_kAo2_rPkpb90qM4p--nBdenKtG2344Y',
+          key: process.env.VUE_APP_API_KEY,
         },
       });
     },
@@ -70,13 +70,12 @@ export default {
           part: 'snippet',
           maxResults: 20,
           playlistId: 'PL64E6BD94546734D8',
-          key: 'AIzaSyB_kAo2_rPkpb90qM4p--nBdenKtG2344Y',
+          key: process.env.VUE_APP_API_KEY,
         },
       });
     },
   },
   mounted() {
-    console.log(process.env.VUE_APP_API_KEY);
     Promise.all([
       this.getMoroccoMostPopular(),
       this.getBollywoodMostPopular(),

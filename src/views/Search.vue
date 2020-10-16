@@ -26,7 +26,7 @@ export default {
           q: term,
           videoCategoryId: 10,
           type: 'video',
-          key: 'AIzaSyB_kAo2_rPkpb90qM4p--nBdenKtG2344Y',
+          key: process.env.VUE_APP_API_KEY,
         },
       });
     },

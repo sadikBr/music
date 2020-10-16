@@ -1,9 +1,14 @@
 <template>
-  <v-list class="ma-auto" max-width="950px" subheader>
+  <v-list class="ma-auto pb-0" max-width="950px" subheader>
     <v-subheader>{{ groupName }}</v-subheader>
 
-    <v-list-item v-for="song in songs" :key="song.id.videoId" link>
-      <v-list-item-avatar>
+    <v-list-item
+      class="border"
+      v-for="song in songs"
+      :key="song.id.videoId"
+      link
+    >
+      <v-list-item-avatar width="65px" height="65px">
         <v-img :src="song.snippet.thumbnails.medium.url"></v-img>
       </v-list-item-avatar>
       <v-list-item-content>
@@ -18,9 +23,6 @@
       <v-list-item-icon>
         <v-btn class="btn-edit" x-small fab>
           <v-icon>mdi-dots-vertical</v-icon>
-        </v-btn>
-        <v-btn class="btn-edit" x-small fab>
-          <v-icon>mdi-heart</v-icon>
         </v-btn>
         <v-btn
           class="btn-edit"
@@ -42,6 +44,10 @@ export default {
 </script>
 
 <style scoped>
+.border {
+  border-bottom: 1px solid rgb(122, 120, 120);
+  margin-bottom: 4px;
+}
 .btn-edit {
   margin: 5px;
   display: flex;

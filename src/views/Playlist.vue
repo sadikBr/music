@@ -6,7 +6,7 @@
 export default {};
 </script>
 
-<style>
+<style scoped>
 .playlist {
   width: 100%;
   height: 100%;

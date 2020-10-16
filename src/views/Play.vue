@@ -1,16 +1,29 @@
 <template>
-  <div class="player">Player Page</div>
+  <div class="player">
+    <TopBar />
+    <MainPlayer />
+  </div>
 </template>
 
 <script>
-export default {};
+import TopBar from '../components/media player/TopBar';
+import MainPlayer from '../components/media player/MainPlayer';
+
+export default {
+  components: {
+    TopBar,
+    MainPlayer,
+  },
+  mounted() {
+    //console.log(this.$route.params.id);
+  },
+};
 </script>
 
-<style>
+<style scoped>
 .player {
   width: 100%;
-  height: 100%;
-  padding: 12px;
-  overflow: hidden;
+  max-height: 100%;
+  overflow: hidden !important;
 }
 </style>

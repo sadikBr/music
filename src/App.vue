@@ -161,6 +161,7 @@ export default {
         name: 'Search',
         params: { q: this.searchTerm },
       });
+      this.searchTerm = '';
     },
   },
   created() {

@@ -129,7 +129,7 @@ export default {
 
   data: () => ({
     drawer: false,
-    bottomNav: 0,
+    bottomNav: null,
     searchTerm: '',
   }),
   computed: {

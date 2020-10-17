@@ -5,24 +5,35 @@
         class="nav-icon"
         @click.stop="drawer = !drawer"
       ></v-app-bar-nav-icon>
-      Now Playing
+      Comming Next
     </h1>
-    <v-navigation-drawer v-model="drawer" absolute bottom temporary>
+    <v-navigation-drawer
+      v-model="drawer"
+      width="450px"
+      absolute
+      bottom
+      temporary
+    >
       <v-list nav dense>
         <h5 class="title">Up Comming Songs</h5>
         <v-list-item-group>
-          <v-list-item class="border" v-for="n in 25" :key="n" link>
+          <v-list-item
+            class="border"
+            v-for="video in relatedVideos"
+            :key="video.id.videoId"
+            link
+          >
             <v-list-item-avatar width="45px" height="45px">
-              <v-img
-                src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg"
-              ></v-img>
+              <v-img :src="video.snippet.thumbnails.medium.url"></v-img>
             </v-list-item-avatar>
             <v-list-item-content>
               <v-list-item-content>
-                <v-list-item-title v-text="songName"></v-list-item-title>
+                <v-list-item-title
+                  v-text="video.snippet.title"
+                ></v-list-item-title>
                 <v-list-item-title
                   class="font"
-                  v-text="artistName"
+                  v-text="video.snippet.channelTitle"
                 ></v-list-item-title>
               </v-list-item-content>
             </v-list-item-content>
@@ -34,7 +45,7 @@
                 class="btn-edit"
                 fab
                 x-small
-                :to="{ name: 'Play', params: { id: n } }"
+                :to="{ name: 'Play', params: { id: video.id.videoId } }"
               >
                 <v-icon>mdi-play</v-icon>
               </v-btn>
@@ -48,6 +59,7 @@
 
 <script>
 export default {
+  props: ['relatedVideos'],
   data() {
     return {
       drawer: false,
@@ -65,6 +77,12 @@ export default {
 .border {
   border-bottom: 1px solid rgb(122, 120, 120);
   margin-bottom: 4px;
+}
+.font {
+  font-size: 0.6em !important;
+  font-weight: normal;
+  margin-top: 5px;
+  color: rgb(230, 78, 103);
 }
 .btn-edit {
   margin: 5px;
@@ -87,7 +105,7 @@ export default {
     flex: 1;
 
     .nav-icon {
-      margin-right: 5px;
+      margin-right: 15px;
     }
   }
 }
